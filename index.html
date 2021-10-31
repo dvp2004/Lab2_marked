@@ -21,7 +21,7 @@
     <div id="title">
         <h1>Help the bear escape the bees !</h1>
         <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
-        <p>Adjust Bear speed <input type="text" id="speedBear" value="50" size="3"> px/ms
+        <p>Adjust Bear speed <input type="text" id="speedBear" value="50" size="3" onchange=setSpeed()> px/ms
         <p>You can ajust bees' speed <input type="text" id="speedBees" value="50" size="3"> px/ms
         <br> and the refresh period <input type="text" id="periodTimer" value="10" size="3"> ms </p>
         <h2>Press left, right, up, down keys to move the bear</h2>
@@ -44,6 +44,7 @@
 
     <div id="board">
         <img src="./images/bear.gif" id="bear" alt="bear">
+        <!-- https://github.com/hbatatia/lab02-dom-resources/blob/main/images/bear.gif?raw=true -->
     </div>
 
 

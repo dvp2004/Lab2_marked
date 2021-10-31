@@ -35,6 +35,7 @@ function Bear() {
     this.setSpeed = function() {
         let b_speed = document.getElementById("speedBear");
         bear.dBear = Number(b_speed.value);
+        
     }
 
 
