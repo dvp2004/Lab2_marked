@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JavaScript and DOM API</title>
     <link rel="stylesheet" type="text/css" href="game.css" media="all" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="game.js"></script>
-    <script>
-        var bear; //instantiating bear object by creating a global variable
+
+    <script src="game.js">
+        var bear;  //instantiating bear object by creating a global variable
+        var bees;
+        var updateTimer;
+        var nbBees;
+        var game_start=false;
+        var lastStingTime;
+          
     </script>
     <noscript>
         Warning - JavaScript is Disabled.
         For full functionality of this page, it is necessary to enable JavaScript.
-    </noscript>
+    </noscript> 
    
 </head>
 
-<body onload="start();"> <!--Invokes start() when the page loads-->
-    <div id="title">
+<body onload="start();"> <!--Invokes start() when the page loads. Program starts off by calling the start() function  -->
+     <div id="title">
         <h1>Help the bear escape the bees !</h1>
         <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
-        <p>Adjust Bear speed <input type="text" id="speedBear" value="50" size="3" onchange=setSpeed()> px/ms
+        <p>Adjust Bear speed <input type="number" id="speedBear" value="50" size="3"> px/ms
         <p>You can ajust bees' speed <input type="text" id="speedBees" value="50" size="3"> px/ms
-        <br> and the refresh period <input type="text" id="periodTimer" value="10" size="3"> ms </p>
-        <h2>Press left, right, up, down keys to move the bear</h2>
-
+        <br> and the refresh period <input type="text" id="periodTimer" value="100" size="3"> ms </p>
+        <h2>Press left, right, up and down keys to move the bear</h2>
+        <br><br><br><br><button type="button" onclick="addBees()">Add bees</button> 
     </div>
 
     <div id="scores">
@@ -35,28 +42,17 @@
                     <p>Stings: [<span id="hits">0</span>]</p>
                 </td>
                 <td>
-                    <p>Best duration: [<span id="duration">?</span>]</p>
+                    <p>Best duration: [<span id="duration">0</span>]</p>
                 </td>
             </tr>
         </table>
    
-    </div>
+    </div> 
 
     <div id="board">
         <img src="./images/bear.gif" id="bear" alt="bear">
-        <!-- https://github.com/hbatatia/lab02-dom-resources/blob/main/images/bear.gif?raw=true -->
+        <!-- <img src="https://github.com/hbatatia/lab02-dom-resources/blob/main/images/bear.gif?raw=true" id="bear" alt="bear">   -->
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
 </body>
-</html>
+</html> 
